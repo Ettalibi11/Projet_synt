@@ -1,0 +1,274 @@
+ .navbar {
+  background-color: var(--neutral-card-bg); /* Or var(--pastel-green-light) for a touch of color */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--neutral-border);
+   margin-bottom: 0 !important;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  max-width: 1300px; /* Adjust as per your design */
+  padding: 0 24px; /* Or 50px if you prefer more spacing */
+}
+
+.navbar-logo {
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: var(--font-headings);
+}
+
+.navbar-logo img {
+  height: 50px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
+.nav-item {
+  height: 80px;
+  display: flex; /* To align items vertically */
+  align-items: center; /* To align items vertically */
+}
+.nav-item-mobile-search {
+  display: none; /* Hidden by default, shown in mobile menu */
+}
+
+
+.nav-links {
+  color: var(--text-medium);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-links:hover {
+  color: var(--pastel-green-medium);
+  border-bottom: 3px solid var(--pastel-pink-medium);
+}
+
+.nav-links.active {
+  color: var(--pastel-green-medium);
+  border-bottom: 3px solid var(--pastel-green-medium);
+  font-weight: bold;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar-desktop {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  background-color: var(--neutral-background);
+  border: 1px solid var(--neutral-border);
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.search-bar-mobile {
+  display: flex; /* Shown in mobile menu */
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 0.9rem;
+  background-color: transparent;
+  color: var(--text-dark);
+  width: 150px; /* Adjust as needed */
+}
+.search-input-mobile {
+  flex-grow: 1;
+  border: 1px solid var(--neutral-border);
+  outline: none;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 20px 0 0 20px;
+  background-color: var(--neutral-background);
+  color: var(--text-dark);
+}
+
+
+.search-button, .search-button-mobile {
+  background: none;
+  border: none;
+  color: var(--text-medium);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.search-button-mobile {
+  padding: 8px 12px;
+  background-color: var(--pastel-green-light);
+  color: var(--pastel-green-medium);
+  border-radius: 0 20px 20px 0;
+  border: 1px solid var(--neutral-border);
+  border-left: none;
+}
+
+.search-button:hover, .search-button-mobile:hover {
+  color: var(--pastel-green-medium);
+}
+
+.nav-icon-link {
+  color: var(--text-dark);
+  font-size: 1.4rem;
+  margin-left: 15px;
+  cursor: pointer;
+  position: relative; /* For badge positioning */
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon-link:hover .nav-icon {
+  color: var(--pastel-green-medium);
+}
+
+.nav-icon {
+  transition: color 0.3s ease;
+}
+
+.cart-icon-container {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--pastel-pink-medium);
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border: 1px solid var(--neutral-card-bg);
+}
+
+.menu-icon {
+  display: none; /* Hidden by default */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* height: calc(100vh - 80px); Fixed height can be problematic */
+    position: absolute;
+    top: 80px; /* Below navbar */
+    left: -100%; /* Off-screen */
+    opacity: 1;
+    transition: all 0.4s ease;
+    background-color: var(--neutral-card-bg); /* Match navbar or slightly different */
+    padding-bottom: 20px; /* Space at the bottom */
+  }
+
+  .nav-menu.active {
+    left: 0; /* Slide in */
+    opacity: 1;
+    transition: all 0.4s ease;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-item {
+    width: 100%;
+    height: auto; /* Adjust height for column layout */
+  }
+  .nav-item-mobile-search {
+    display: list-item; /* Show in mobile menu */
+    width: 90%;
+    margin: 10px auto;
+  }
+
+
+  .nav-links {
+    text-align: center;
+    padding: 1.5rem 1rem; /* More padding for touch */
+    width: 100%;
+    display: table;
+    border-bottom: none; /* Remove desktop border */
+  }
+
+  .nav-links:hover {
+    background-color: var(--pastel-green-light);
+    color: var(--pastel-green-medium);
+    border-bottom: none;
+    border-radius: 0;
+  }
+  .nav-links.active {
+     background-color: var(--pastel-green-light);
+     color: var(--pastel-green-medium);
+     font-weight: bold;
+     border-bottom: none;
+  }
+
+
+  .menu-icon {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-dark);
+  }
+
+  .navbar-controls {
+    /* Decide how to handle controls on mobile. For now, keep them but hide desktop search */
+  }
+  .search-bar-desktop {
+    display: none; /* Hide desktop search on mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-logo img {
+    height: 40px;
+  }
+  .navbar-logo span { /* If you add a text span next to logo */
+    font-size: 1.2rem;
+  }
+  .nav-icon-link {
+    font-size: 1.3rem;
+    margin-left: 10px;
+  }
+  .search-input { /* If you decide to keep a smaller search bar */
+    width: 100px;
+  }
+}

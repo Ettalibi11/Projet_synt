@@ -3,9 +3,11 @@ import React from 'react'; // Only need one React import
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAllItems } from '../../store/slices/productsSlice';
 import { addItem } from '../../store/slices/cartSlice';
+// import Hero from '../HeroSection/Hero.jsx'
+// import Navbar from '../HeroSection/NavBar.jsx'
 
 // Import your new section components
-import HeroSection from './HomePageSections/HeroSection'; // Adjust path if needed
+import HeroSection from './HomePageSections/HeroSection'; 
 import FeaturedProductsSection from './HomePageSections/FeaturedProductsSection';
 import AboutUsSection from './HomePageSections/AboutUsSection';
 import FaqsSection from './HomePageSections/FaqsSection';
@@ -26,6 +28,8 @@ function HomePage() {
   return (
     <div className="homepage-container">
       <HeroSection />
+       {/* <Navbar/>
+      <Hero/> */}
       <FeaturedProductsSection 
         products={featuredProducts} 
         onAddToCart={handleAddToCartOnHome} 

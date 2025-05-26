@@ -7,6 +7,8 @@ import ProductDetailPage from './components/ProductDetailPage/ProductDetailPage'
 import CartSidebar from './components/CartSidebar/CartSidebar';
 import CheckoutPage from './components/CheckoutPage/CheckoutPage';
 import Footer from './components/Layouts/Footer/Footer';
+import Navbar from './components/Layouts/Navbar/Navbar';
+import AboutUsSection from './components/HomePage/HomePageSections/AboutUsSection'
 
 import './index.css' 
 
@@ -16,7 +18,8 @@ function App() {
   return (
     <Router>
       <div className="app">
-        {/* <Navbar /> You'll need a way to toggle the cart from Navbar too */}
+        
+        <Navbar /> 
         <CartSidebar /> 
         <main className="main-content">
         <Routes>
@@ -25,6 +28,7 @@ function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/product/:productId" element={<ProductDetailPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/about" element={<AboutUsSection />} />
           
         </Routes>
         </main>

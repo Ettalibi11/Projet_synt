@@ -1,10 +1,11 @@
       /* src/pages/HomePage.css or src/components/HomePage/HomePage.css */
 
-.homepage-container {
-  font-family: var(--font-primary);
-  color: var(--text-dark);
-  /* background-color: var(--neutral-background); /* Already set on body in global CSS */
+.homepage-container, /* The root div in your HomePage.jsx */
+.homepage { /* If you named it .homepage */
+  padding-top: 0 !important; /* Remove top padding */
+  margin-top: 0 !important; /* Remove top margin */
 }
+
 
 /* --- Hero Section --- */
 .hero-section {
@@ -15,8 +16,11 @@
   /* background-position: center; */
   color: var(--text-dark); /* Or white if using a dark background image */
   text-align: center;
-  padding: 80px 20px;
-  margin-bottom: 60px; /* Space before next section */
+  padding: 120px 20px;
+   min-height: 60vh;
+  margin-bottom: 60px;
+   /* Space before next section */
+   margin-top: 0;
 }
 
 .hero-section h1 {
@@ -24,15 +28,15 @@
   font-size: 3em; /* Large hero title */
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: var(--pastel-green-medium); /* Darker green for contrast on light green bg */
 }
 
 .hero-section p {
   font-size: 1.2em;
-  max-width: 650px;
+  max-width: 700px;
   margin: 0 auto 30px auto;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--text-medium); /* Or ensure good contrast with bg */
 }
 
@@ -56,6 +60,7 @@
   background-color: var(--pastel-green-medium); /* Green on hover */
   box-shadow: 0 6px 15px rgba(var(--pastel-green-medium), 0.3);
   transform: translateY(-2px);
+  color: antiquewhite;
 }
 
 

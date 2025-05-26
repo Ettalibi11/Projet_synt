@@ -1,7 +1,7 @@
       // src/components/HomePageSections/AboutUsSection.jsx
 import React from 'react';
 // import { Link } from 'react-router-dom'; // If you have internal links
-import aboutImage from '../../../assets/test.jpg';
+import aboutImage from '../../../assets/images/full logo.jpg';
 
 function AboutUsSection() {
   return (

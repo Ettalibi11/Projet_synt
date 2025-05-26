@@ -15,10 +15,11 @@ import {
 import './CartSidebar.css'; // Create this CSS file
 
 function CartSidebar() {
+  const isOpen = useSelector(selectIsCartOpen);
   const dispatch = useDispatch();
    const navigate = useNavigate();
   const items = useSelector(selectCartItems);
-  const isOpen = useSelector(selectIsCartOpen);
+ 
   const totalPrice = useSelector(selectCartTotalPrice);
   const totalItemsCount = useSelector(selectCartTotalItems);
 
@@ -37,7 +38,7 @@ function CartSidebar() {
   }
 
   return (
-    <div className="cart-sidebar">
+    <aside className="cart-sidebar">
       <button onClick={() => dispatch(toggleCart())} className="close-cart-btn" aria-label="Close cart">x</button>
        {/* New inner wrapper for padding and actual scrollable content */}
       <div className="cart-sidebar-content-wrapper"> 
@@ -81,7 +82,7 @@ function CartSidebar() {
         </>
       )}
     </div>
-    </div>
+    </aside>
   );
 }
 

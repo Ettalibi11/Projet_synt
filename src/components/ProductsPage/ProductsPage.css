@@ -9,7 +9,7 @@
   color: var(--text-dark);
 }
 .back-to-home-link-container {
-  margin-bottom: 25px; /* Space below the link */
+  margin-bottom: 0px; /* Space below the link */
   /* text-align: left; /* Default, or adjust as needed */
 }
 
@@ -19,7 +19,7 @@
   text-decoration: none;
   font-size: 0.95em;
   font-weight: 500;
-  padding: 8px 0; /* Add some padding if it looks too tight */
+  padding: 0; /* Add some padding if it looks too tight */
   display: inline-block; /* Allows padding to work correctly */
   transition: color 0.2s ease, text-decoration 0.2s ease;
 }
@@ -31,7 +31,7 @@
 
 .page-title {
   font-family: var(--font-headings);
-  font-size: 2.8em;
+  font-size: 4em;
   font-weight: 600;
   color: var(--text-dark);
   text-align: center;

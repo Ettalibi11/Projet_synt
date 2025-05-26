@@ -17,7 +17,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-content-wrapper">
         <div className="footer-column footer-about">
-          <h3 className="footer-heading">[the Shop Name]</h3>
+          <h3 className="footer-heading">Almond Blossom</h3>
           <p>
             Bringing beauty and joy into your life with handcrafted floral designs and unique plants.
             Inspired by nature, created with passion.
@@ -75,7 +75,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {currentYear} [the Shop Name]. All Rights Reserved. Designed with ♥.</p>
+        <p>© {currentYear} Almond Blossom . All Rights Reserved. Designed with ♥.</p>
       </div>
     </footer>
   );
