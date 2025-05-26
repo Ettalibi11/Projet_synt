@@ -1,0 +1,199 @@
+      /* src/components/Layout/Footer.css */
+
+.site-footer {
+  background-color: var(--pastel-green-light); /* Light pastel green background */
+  color: var(--text-dark); /* Or a slightly lighter text for footer var(--text-medium) */
+  padding: 50px 0 0; /* Top padding, no bottom padding initially (footer-bottom handles it) */
+  font-family: var(--font-primary);
+  font-size: 0.95em; /* Slightly smaller base font for footer */
+  line-height: 1.7;
+}
+
+.footer-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
+  display: flex;
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+  justify-content: space-between; /* Distribute space between columns */
+  gap: 30px; /* Gap between columns */
+}
+
+.footer-column {
+  flex: 1 1 220px; /* Flex properties for columns, base width 220px */
+  margin-bottom: 30px;
+  min-width: 200px; /* Ensure columns don't get too squished */
+}
+
+.footer-heading {
+  font-family: var(--font-headings);
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--pastel-green-medium); /* Heading color to match theme */
+  margin-top: 0;
+  margin-bottom: 20px;
+  position: relative;
+}
+/* Optional: Decorative line under footer headings */
+.footer-heading::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2.5px;
+  background-color: var(--pastel-pink-medium); /* Contrasting color */
+  margin-top: 8px;
+}
+
+
+.footer-about p {
+  color: var(--text-medium);
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  max-width: 120px; /* Adjust as needed */
+  margin-top: 10px;
+}
+
+.footer-links ul,
+.footer-policy-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.footer-policy-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-policy-links a {
+  color: var(--text-dark); /* Slightly darker than paragraph text for links */
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-policy-links a:hover {
+  color: var(--pastel-pink-medium); /* Hover color */
+  padding-left: 5px; /* Subtle indent on hover */
+  text-decoration: underline;
+}
+
+/* Social Icons Styling */
+.social-icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+  margin-top: 5px; /* Align with other lists slightly */
+}
+
+.social-icons a {
+  color: var(--pastel-green-medium); /* Icon color */
+  font-size: 1.6em; /* This will effectively control the SVG icon size */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Size of the clickable area/background */
+  height: 40px;
+  border: 1px solid var(--neutral-border);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--pastel-green-medium);
+  color: #fff; /* Icon color on hover */
+  border-color: var(--pastel-green-medium);
+}
+
+/* Placeholder text for icons - REMOVE IF USING ACTUAL ICONS */
+.social-icons a {
+  font-weight: bold;
+  font-family: var(--font-headings);
+}
+
+/* Newsletter (Optional) */
+.newsletter-signup {
+  margin-top: 25px;
+}
+.newsletter-signup h4 {
+  font-family: var(--font-headings);
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: var(--pastel-green-medium);
+}
+.newsletter-signup input[type="email"] {
+  width: calc(100% - 22px); /* Account for padding and border */
+  padding: 10px;
+  border: 1px solid var(--neutral-border);
+  border-radius: 5px 0 0 5px; /* Rounded left corners */
+  font-family: var(--font-primary);
+  margin-bottom: 10px; /* For stacking on mobile */
+  box-sizing: border-box;
+}
+.newsletter-signup button[type="submit"] {
+  padding: 10px 15px;
+  background-color: var(--pastel-green-medium);
+  color: #fff;
+  border: 1px solid var(--pastel-green-medium);
+  border-radius: 0 5px 5px 0; /* Rounded right corners */
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-left: -1px; /* Overlap border with input */
+}
+.newsletter-signup button[type="submit"]:hover {
+  background-color: var(--pastel-pink-medium);
+  border-color: var(--pastel-pink-medium);
+}
+
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 30px; /* Space above the bottom bar */
+  border-top: 1px solid var(--neutral-border); /* Separator line */
+  background-color: var(--pastel-green-light); /* Can be same as footer or slightly different */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--text-medium);
+}
+
+/* Responsive Adjustments for Footer */
+@media (max-width: 768px) {
+  .footer-content-wrapper {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center columns */
+    text-align: center; /* Center text within columns */
+  }
+  .footer-column {
+    flex-basis: auto; /* Reset flex basis */
+    width: 100%; /* Make columns full width */
+    max-width: 350px; /* Max width for stacked columns for readability */
+  }
+  .footer-heading::after {
+    margin-left: auto; /* Center the decorative line */
+    margin-right: auto;
+  }
+  .social-icons {
+    justify-content: center; /* Center social icons */
+  }
+  .newsletter-signup form {
+    display: flex;
+    flex-direction: column; /* Stack input and button on mobile */
+  }
+  .newsletter-signup input[type="email"],
+  .newsletter-signup button[type="submit"] {
+    width: 100%;
+    max-width: 300px; /* Limit width of input/button */
+    margin: 5px auto; /* Center and add vertical space */
+    border-radius: 5px; /* Full radius for stacked */
+  }
+}

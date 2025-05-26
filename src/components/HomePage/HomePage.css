@@ -1,0 +1,417 @@
+      /* src/pages/HomePage.css or src/components/HomePage/HomePage.css */
+
+.homepage-container {
+  font-family: var(--font-primary);
+  color: var(--text-dark);
+  /* background-color: var(--neutral-background); /* Already set on body in global CSS */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  background-color: var(--pastel-green-light); /* Light pastel green for hero */
+  /* Or use a beautiful background image: */
+  /* background-image: url('../assets/your-hero-image.jpg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  color: var(--text-dark); /* Or white if using a dark background image */
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 60px; /* Space before next section */
+}
+
+.hero-section h1 {
+  font-family: var(--font-headings);
+  font-size: 3em; /* Large hero title */
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--pastel-green-medium); /* Darker green for contrast on light green bg */
+}
+
+.hero-section p {
+  font-size: 1.2em;
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+  line-height: 1.7;
+  color: var(--text-medium); /* Or ensure good contrast with bg */
+}
+
+.hero-cta-button {
+  display: inline-block;
+  background-color: var(--pastel-pink-medium); /* Pink CTA */
+  color: #fff;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 15px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(var(--pastel-pink-medium), 0.3);
+}
+
+.hero-cta-button:hover {
+  background-color: var(--pastel-green-medium); /* Green on hover */
+  box-shadow: 0 6px 15px rgba(var(--pastel-green-medium), 0.3);
+  transform: translateY(-2px);
+}
+
+
+/* --- Featured Products Section --- */
+.featured-products-section {
+  max-width: 1200px;
+  margin: 0 auto 60px auto; /* Center section and add bottom margin */
+  padding: 0 25px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--neutral-border);
+}
+
+.section-title {
+  font-family: var(--font-headings);
+  font-size: 2.2em;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.view-all-link {
+  font-family: var(--font-primary);
+  color: var(--pastel-green-medium);
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.view-all-link:hover {
+  color: var(--pastel-pink-medium);
+  text-decoration: underline;
+}
+
+.featured-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Slightly larger base for home */
+  gap: 30px;
+}
+
+/* Product Card Styling for Homepage - can reuse or adapt from Products1.css */
+.home-product-card {
+  background-color: var(--neutral-card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(150, 150, 150, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+.home-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(100, 100, 100, 0.12);
+}
+
+.home-product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex; /* Make link flex to control children */
+  flex-direction: column;
+  flex-grow: 1; /* Allow link to take up space before button */
+}
+
+.home-product-card-image-wrapper {
+  width: 100%;
+  padding-top: 100%; /* Square aspect ratio */
+  position: relative;
+  background-color: var(--neutral-background);
+}
+
+.home-product-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.home-product-card:hover .home-product-card-image {
+  transform: scale(1.05);
+}
+
+.home-product-card-content {
+  padding: 15px 20px 10px; /* Slightly less padding for home card */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.home-product-card-name {
+  font-family: var(--font-headings);
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  min-height: 2.6em; /* For 2 lines of text to align cards */
+}
+
+.home-product-card-price {
+  font-family: var(--font-primary);
+  font-size: 1.15em;
+  font-weight: 700;
+  color: var(--pastel-pink-medium);
+  margin: auto 0 10px 0; /* Pushes price down a bit */
+}
+
+.add-to-cart-btn-home {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  font-size: 0.85em; /* Slightly smaller for home card */
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0px 20px 20px 20px; /* Add margin around the button itself */
+  width: calc(100% - 40px); /* Button width considering its own margin */
+  align-self: center;
+}
+
+.add-to-cart-btn-home:hover {
+  background-color: var(--button-primary-hover-bg);
+  color: var(--button-primary-hover-text);
+  border-color: var(--button-primary-hover-border);
+  transform: scale(1.03);
+}
+
+.no-featured-products-message {
+  text-align: center;
+  font-size: 1.1em;
+  color: var(--text-medium);
+  padding: 40px 20px;
+}
+      /* src/pages/HomePage.css */
+/* ... (your existing global styles like :root, body, if not in index.css) ... */
+/* ... (your existing HomePage.css styles for .homepage-container, hero, featured products, etc.) ... */
+
+
+/* --- General Homepage Section Styling (ensure these are defined) --- */
+.homepage-section {
+  padding: 60px 0; /* Vertical padding for sections */
+}
+
+.section-content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.homepage-section .section-title {
+  font-family: var(--font-headings);
+  font-size: 2.4em;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 45px; /* Increased bottom margin */
+  position: relative;
+}
+
+.homepage-section .section-title::after {
+  content: '';
+  display: block;
+  width: 70px; /* Slightly wider decorative line */
+  height: 3.5px; /* Slightly thicker */
+  background-color: var(--pastel-green-medium);
+  margin: 18px auto 0; /* Increased top margin */
+  border-radius: 2px;
+}
+
+
+/* --- About Us Section Styling --- */
+.about-us-section {
+  background-color: var(--pastel-pink-light); /* Using a variable from your theme */
+  /* Or a very light cream if pink is too much: background-color: #fff8f0; */
+}
+
+.about-us-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Vertically align items */
+  gap: 50px; /* Increased gap */
+}
+
+.about-us-text {
+  flex: 1 1 520px; /* Allow text to take a bit more base width */
+  color: var(--text-dark);
+  line-height: 1.85; /* Slightly more line height */
+  font-size: 1.08em; /* Slightly larger base font for readability */
+}
+
+.about-us-text p {
+  margin-bottom: 22px;
+}
+.about-us-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-us-image-container {
+  flex: 1 1 380px; /* Image container can be a bit smaller relatively */
+  text-align: center;
+  display: flex; /* For centering image if it's smaller */
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px; /* More rounded corners for image */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Softer, more diffused shadow */
+  object-fit: cover; /* Ensure image covers its bounds well */
+}
+
+/* --- FAQs Section Styling --- */
+.faqs-section {
+  background-color: var(--neutral-background); /* Or another contrasting soft color */
+}
+
+.faqs-list {
+  max-width: 850px; /* Slightly wider FAQ list */
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: var(--neutral-card-bg);
+  border: 1px solid var(--neutral-border);
+  border-radius: 10px; /* More rounded */
+  margin-bottom: 18px; /* Slightly more space between items */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.25s ease;
+  overflow: hidden; /* Ensure child elements respect border-radius */
+}
+
+.faq-item:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 28px; /* Increased padding */
+  background: none; /* Ensure no default button background */
+  border: none; /* Ensure no default button border */
+  font-family: var(--font-primary); /* Using primary font */
+  font-size: 1.15em; /* Slightly larger */
+  font-weight: 500;
+  color: var(--text-dark);
+  text-align: left;
+  cursor: pointer;
+  /* border-radius: 10px 10px 0 0; /* Round top corners if answer is shown */
+  transition: background-color 0.2s ease;
+}
+/* .faq-question:not(.open):hover {
+  background-color: var(--pastel-green-light);
+  color: var(--pastel-green-medium);
+} */
+
+
+.faq-question:focus-visible { /* For keyboard navigation */
+  outline: 2px solid var(--pastel-green-medium);
+  outline-offset: -2px; /* Outline inside */
+  /* border-radius: 8px; /* If the button itself is what gets the focus ring */
+}
+
+.faq-question.open {
+  color: var(--pastel-green-medium); /* Active question color */
+  font-weight: 600;
+  /* background-color: #f9f9f9; /* Subtle background for open question */
+}
+
+.faq-icon {
+  font-size: 1.5em; /* Make icon a bit larger */
+  font-weight: 300; /* Light weight for + / - */
+  color: var(--pastel-green-medium);
+  margin-left: 15px; /* Space between text and icon */
+  transition: transform 0.25s ease-out;
+  line-height: 1; /* Prevent extra space from line height */
+}
+
+.faq-question.open .faq-icon {
+  transform: rotate(180deg); /* For a minus sign, this makes it look like it opens down */
+  /* If using + and - directly, you might not need rotation or a different rotation for + to x */
+}
+
+.faq-answer {
+  padding: 0px 28px 25px 28px; /* Consistent padding with question */
+  color: var(--text-medium);
+  line-height: 1.75;
+  font-size: 1.0em;
+  /* border-top: 1px solid var(--neutral-soft-border); */ /* Moved to be part of the question when open */
+  /* margin-top: -1px; */
+  background-color: var(--neutral-card-bg); /* Ensure it has a background */
+  animation: fadeInAnswer 0.35s ease-out;
+}
+
+/* Keyframes animation (ensure it's defined if not already) */
+@keyframes fadeInAnswer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0; /* For smoother collapse/expand with unknown height */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px; /* A large enough value to accommodate content */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* ... (your existing responsive styles) ... */
+
+  .homepage-section .section-title {
+    font-size: 2.1em; /* Adjusted for mobile */
+    margin-bottom: 35px;
+  }
+  .homepage-section .section-title::after {
+    width: 60px;
+    margin-top: 12px;
+  }
+
+  .about-us-content {
+    gap: 30px; /* Reduced gap on mobile */
+  }
+  .about-us-text {
+    font-size: 1em;
+  }
+  .about-us-image-container {
+      margin-top: 20px; /* Space above image when stacked */
+  }
+
+
+  .faq-question {
+    font-size: 1.05em;
+    padding: 18px 22px;
+  }
+  .faq-answer {
+    padding: 0 22px 20px 22px;
+    font-size: 0.95em;
+  }
+}

@@ -1,0 +1,175 @@
+
+
+
+/* Overall page container for centering and padding */
+.product-detail-page-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: var(--font-primary); /* Using CSS variable */
+  color: var(--text-dark);
+  background-color: var(--neutral-background); /* Apply soft background to the whole page area */
+}
+.back-to-products-link-container {
+  margin-bottom: 25px; /* Space below the link */
+  /* text-align: left; /* Or center, or right if you prefer */
+}
+
+.back-to-products-link {
+  font-family: var(--font-primary);
+  color: var(--pastel-green-medium); /* Use a theme color */
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 500;
+  padding: 8px 0; /* Add some padding if it looks too tight */
+  display: inline-block; /* Allows padding to work correctly */
+  transition: color 0.2s ease;
+}
+
+.back-to-products-link:hover {
+  color: var(--pastel-pink-medium); /* Change color on hover */
+  text-decoration: underline;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--text-medium);
+  padding: 50px;
+}
+
+.product-detail-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background-color: var(--neutral-card-bg); /* White for the card itself */
+  border-radius: 12px; /* Slightly more rounded */
+  box-shadow: 0 6px 16px rgba(150, 150, 150, 0.12); /* Softer, more diffused shadow */
+  padding: 35px; /* Increased padding */
+}
+
+.product-image-container {
+  flex: 1 1 400px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Very subtle image shadow */
+  object-fit: cover;
+}
+
+.product-info-container {
+  flex: 1 1 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-name {
+  font-family: var(--font-headings); /* Using CSS variable */
+  font-size: 2.6em; /* Slightly adjusted */
+  font-weight: 600; /* Playfair often looks good a bit bolder */
+  color: var(--text-dark); /* Keep it readable */
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.product-description-detail {
+  font-size: 1.05em; /* Slightly smaller for more elegance */
+  line-height: 1.8; /* More line height for readability */
+  color: var(--text-medium);
+  margin-bottom: 25px;
+}
+
+.product-category {
+  font-size: 0.9em;
+  color: var(--text-medium);
+  margin-bottom: 15px;
+}
+
+.product-category span {
+  font-weight: 500;
+  color: var(--pastel-green-medium); /* Using pastel green */
+  background-color: var(--pastel-green-light); /* Lighter pastel green background */
+  padding: 4px 10px; /* Adjusted padding */
+  border-radius: 15px; /* More rounded "pill" for category */
+}
+
+.product-price-detail {
+  font-family: var(--font-headings); /* Consistent heading font */
+  font-size: 2.2em; /* Prominent price */
+  font-weight: 700;
+  color: var(--pastel-pink-medium); /* Using peachy pastel pink for price */
+  margin-top: 10px;
+  margin-bottom: 35px; /* More space before button */
+}
+
+.add-to-cart-button-detail {
+  background-color: var(--pastel-green-medium); /* Main pastel green */
+  color: #fff; /* White text for good contrast on medium green */
+  /* If using a very light pastel, text might need to be dark: */
+  /* background-color: var(--pastel-green-light); */
+  /* color: var(--text-dark); */
+
+  border: 2px solid transparent; /* For a potential hover effect */
+  padding: 14px 35px; /* Adjusted padding */
+  font-size: 1em;
+  font-weight: 600; /* Bolder for button text */
+  font-family: var(--font-primary);
+  border-radius: 30px; /* Pill-shaped button */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  text-transform: uppercase;
+  letter-spacing: 1px; /* More spacing for uppercase */
+  align-self: flex-start;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.add-to-cart-button-detail:hover {
+  background-color: var(--pastel-pink-light); /* Switch to light pastel pink on hover */
+  color: var(--text-dark); /* Text color changes for light pink background */
+  border: 2px solid var(--pastel-green-medium); /* Outline with the original green */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+}
+
+.add-to-cart-button-detail:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 800px) {
+  .product-detail-content {
+    flex-direction: column;
+    padding: 25px; /* Adjusted padding */
+    gap: 30px;
+  }
+
+  .product-image-container,
+  .product-info-container {
+    flex-basis: auto;
+    max-width: 100%;
+  }
+
+  .product-name {
+    font-size: 2em;
+  }
+
+  .product-price-detail {
+    font-size: 1.9em;
+  }
+
+  .add-to-cart-button-detail {
+    width: 100%;
+    text-align: center;
+  }
+}
