@@ -33,8 +33,8 @@ export default productsSlice.reducer;
 
 // --- Selectors ---
 // Basic selectors
-const selectProductsState = (state) => state.products; // Helper to get the whole products slice
-export const selectAllItems = createSelector( // Make this a selector too for consistency
+const selectProductsState = (state) => state.products; 
+export const selectAllItems = createSelector(
     [selectProductsState],
     (productsState) => productsState.allItems
 );
@@ -43,39 +43,37 @@ export const selectSelectedCategory = createSelector(
     (productsState) => productsState.selectedCategory
 );
 
-// Memoized selector to get the unique list of available categories
+
 export const selectAvailableCategories = createSelector(
-  [selectAllItems], // Input selector
+  [selectAllItems], 
   (allItems) => {
-    // Use Set to get unique categories from the products array
+   
     const categories = new Set(allItems.map(item => item.category));
-    // Convert Set back to an array and add 'All' option at the beginning
+    
     return ['All', ...Array.from(categories)];
   }
 );
 
-// Memoized selector to get the products filtered by the selected category
+
 export const selectFilteredProducts = createSelector(
-  // Input selectors: get all items and the current filter
+  
   [selectAllItems, selectSelectedCategory],
   (allItems, selectedCategory) => {
-    // If the filter is 'All', return all items
+   
     if (selectedCategory === 'All') {
       return allItems;
     }
-    // Otherwise, filter the items based on the selected category
+    
     return allItems.filter(item => item.category === selectedCategory);
   }
 );
 
-// Memoized selector to get a single product by its ID
+
 export const selectProductById = createSelector(
-  [selectAllItems, (state, productId) => productId], // selectAllItems is defined
+  [selectAllItems, (state, productId) => productId], 
   (allItems, productId) => {
     if (!allItems || !productId) return undefined;
     return allItems.find(item => item.id === productId);
   }
 );
 
-// Optional: Export basic selectors if needed directly elsewhere
-// export { selectAllItems, selectSelectedCategory };

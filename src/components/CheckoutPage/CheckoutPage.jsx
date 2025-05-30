@@ -1,13 +1,13 @@
-      // src/pages/CheckoutPage.jsx
+ 
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'; // For a link back to cart or products
+import { Link } from 'react-router-dom';
 import {
   selectCartItems,
   selectCartTotalPrice,
   selectCartTotalItems
 } from '../../store/slices/cartSlice';
-import './CheckoutPage.css'; // We'll create this
+import './CheckoutPage.css'; 
 
 function CheckoutPage() {
   const cartItems = useSelector(selectCartItems);
@@ -27,18 +27,9 @@ function CheckoutPage() {
   }
 
   const handlePlaceOrder = (event) => {
-    event.preventDefault(); // Prevent default form submission
-    // In a real application, this is where you would:
-    // 1. Collect form data (name, address, payment info)
-    // 2. Validate the data
-    // 3. Send the order data to your backend API (e.g., POST /api/orders)
-    // 4. Handle success (e.g., show order confirmation, clear cart, redirect)
-    // 5. Handle errors (e.g., show error messages)
+    event.preventDefault(); 
     alert('Order Placed (Simulated)! Thank you for your purchase.');
-    // You might want to dispatch an action to clear the cart here later
-    // dispatch(clearCart());
-    // And navigate to an order confirmation page
-    // navigate('/order-confirmation');
+    
   };
 
 
@@ -50,7 +41,7 @@ function CheckoutPage() {
       </div>
 
       <div className="checkout-content">
-        {/* Left Column: Order Summary & Items */}
+       
         <div className="checkout-order-summary">
           <h2>Your Order ({totalItemsCount} {totalItemsCount > 1 ? 'items' : 'item'})</h2>
           <ul className="checkout-item-list">
@@ -67,12 +58,12 @@ function CheckoutPage() {
           </ul>
           <div className="checkout-total-summary">
             <p>Subtotal: <span>${totalPrice.toFixed(2)}</span></p>
-            <p>Shipping: <span>FREE</span></p> {/* Or calculate shipping */}
+            <p>Shipping: <span>FREE</span></p> 
             <p className="checkout-grand-total">Total: <span>${totalPrice.toFixed(2)}</span></p>
           </div>
         </div>
 
-        {/* Right Column: Shipping & Payment Form (Placeholder for now) */}
+        
         <div className="checkout-form-section">
           <form className="checkout-form" onSubmit={handlePlaceOrder}>
             <div className="form-section">
@@ -89,7 +80,7 @@ function CheckoutPage() {
                 <label htmlFor="city">City</label>
                 <input type="text" id="city" name="city" required />
               </div>
-              {/* Add more fields: Postal Code, Country, Phone */}
+             
             </div>
 
             <div className="form-section">

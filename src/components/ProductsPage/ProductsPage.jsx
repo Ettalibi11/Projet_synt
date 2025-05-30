@@ -1,15 +1,14 @@
-// src/components/ProductsPage/ProductPages.jsx
-// import React from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
 import {
   selectFilteredProducts,
   selectAvailableCategories,
   selectSelectedCategory,
-  setCategoryFilter // Import the action creator
-} from '../../store/slices/productsSlice.js'; // Adjust path if needed
+  setCategoryFilter
+} from '../../store/slices/productsSlice.js'; 
 import { addItem } from '../../store/slices/cartSlice.js'; 
 import { Link } from 'react-router-dom'; 
-import './ProductsPage.css'; // Make sure you have CSS for styling
+import './ProductsPage.css'; 
 
 
 function ProductsPage() {
@@ -59,16 +58,16 @@ function ProductsPage() {
         {availableCategories.map((category) => (
           <button
             key={category}
-            // Apply a different style if this category is currently selected
+            
             className={`filter-button ${category === currentCategory ? 'active' : ''}`}
             onClick={() => handleCategoryChange(category)}
           >
-            {category} {/* Display category name */}
+            {category}
           </button>
         ))}
       </div>
 
-      {/* Products Grid Section */}
+      
       {filteredProducts && filteredProducts.length > 0 ? (
         <div className="products-grid">
           {filteredProducts.map((product) => (

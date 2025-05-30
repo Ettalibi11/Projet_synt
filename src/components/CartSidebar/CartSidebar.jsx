@@ -12,7 +12,7 @@ import {
   decrementQuantity,
  
 } from '../../store/slices/cartSlice.js';
-import './CartSidebar.css'; // Create this CSS file
+import './CartSidebar.css'; 
 
 function CartSidebar() {
   const isOpen = useSelector(selectIsCartOpen);
@@ -24,23 +24,23 @@ function CartSidebar() {
   const totalItemsCount = useSelector(selectCartTotalItems);
 
    const handleProceedToCheckout = () => {
-    if (totalItemsCount > 0) { // Only navigate if cart is not empty
-        dispatch(toggleCart()); // Close the cart sidebar
-        navigate('/checkout');  // <--- Navigate to the checkout page
+    if (totalItemsCount > 0) { 
+        dispatch(toggleCart()); 
+        navigate('/checkout');  
     } else {
-        // Optionally, show a message or disable the button if cart is empty
+      
         alert("Your cart is empty. Please add items to proceed.");
     }
   };
 
   if (!isOpen) {
-    return null; // Don't render if cart is closed
+    return null; 
   }
 
   return (
     <aside className="cart-sidebar">
       <button onClick={() => dispatch(toggleCart())} className="close-cart-btn" aria-label="Close cart">x</button>
-       {/* New inner wrapper for padding and actual scrollable content */}
+       
       <div className="cart-sidebar-content-wrapper"> 
       <h2>Your Cart</h2>
       {items.length === 0 ? (

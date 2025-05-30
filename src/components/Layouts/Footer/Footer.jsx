@@ -1,12 +1,9 @@
-      // src/components/Layout/Footer.jsx
+      
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link'; 
-import './Footer.css'; // We'll create this CSS file
+import './Footer.css'; 
 
-// You'll need to get actual SVG icons or use a library like React Icons
-// For placeholder purposes, I'll use text, but replace with actual icons.
-// Example using React Icons (install it first: npm install react-icons)
  import { FaFacebookF, FaInstagram, FaPinterestP } from 'react-icons/fa';
  import { FiTwitter } from 'react-icons/fi';
 
@@ -22,8 +19,7 @@ function Footer() {
             Bringing beauty and joy into your life with handcrafted floral designs and unique plants.
             Inspired by nature, created with passion.
           </p>
-          {/* Optional: Small logo image */}
-          {/* <img src="/path-to-your-logo-light.png" alt="[Your Shop Name] Logo" className="footer-logo" /> */}
+          
         </div>
 
         <div className="footer-column footer-links">
@@ -31,10 +27,9 @@ function Footer() {
           <ul>
             <li><HashLink to="/">Home</HashLink></li>
             <li><HashLink to="/products">Our Collection</HashLink></li>
-            <li><HashLink to="/#faqs-section">FAQs</HashLink></li> {/* HashLink to FAQ section on homepage */}
-            <li><HashLink to="/#about-us-section">About Us</HashLink></li> {/* Link to About Us section on homepage */}
-            {/* Add more links as you create pages */}
-            {/* <li><Link to="/contact">Contact Us</Link></li> */}
+            <li><HashLink to="/#faqs-section">FAQs</HashLink></li> 
+            <li><HashLink to="/#about-us-section">About Us</HashLink></li> 
+           
           </ul>
         </div>
 
@@ -51,19 +46,19 @@ function Footer() {
           <h3 className="footer-heading">Follow Us</h3>
           <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FaFacebookF /> {/* Use the imported component here */}
+              <FaFacebookF /> 
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram /> {/* Use the imported component here */}
+              <FaInstagram /> 
             </a>
             <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-              <FaPinterestP /> {/* Use the imported component here */}
+              <FaPinterestP /> 
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <FiTwitter />
             </a>
           </div>
-          {/* Optional: Newsletter Signup */}
+          
           <div className="newsletter-signup">
             <h4>Stay Updated</h4>
             <form>

@@ -2,9 +2,9 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaShoppingCart, FaUser, FaSearch, FaBars, FaTimes } from 'react-icons/fa';
-import { toggleCart, selectCartTotalItems } from '../../../store/slices/cartSlice'; // Adjust path if your store is elsewhere
+import { toggleCart, selectCartTotalItems } from '../../../store/slices/cartSlice'; 
 import './Navbar.css';
-import logoImage from '../../../assets/images/logo.png'; // Correct path to your logo
+import logoImage from '../../../assets/images/logo.png'; 
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,12 +22,12 @@ const Navbar = () => {
 
   const handleCartIconClick = () => {
     dispatch(toggleCart());
-    closeMobileMenu(); // Close mobile menu if open
+    closeMobileMenu(); 
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    // Implement search logic here, e.g., navigate to a search results page
+    
     console.log('Search term:', searchTerm);
     setSearchTerm('');
     closeMobileMenu();
@@ -38,8 +38,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           <img src={logoImage} alt="Floral Boutique Logo" />
-          {/* Optional: Add your boutique name if not in the logo */}
-          {/* <span>Floral Boutique</span> */}
+          
         </Link>
 
         <div className="menu-icon" onClick={handleToggleMobileMenu}>
@@ -58,7 +57,7 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/about" // You'll need to create this page/route
+              to="/about" 
               className={({ isActive }) => 'nav-links' + (isActive ? ' active' : '')}
               onClick={closeMobileMenu}
             >
@@ -76,14 +75,14 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/contact" // You'll need to create this page/route
+              to="/contact" 
               className={({ isActive }) => 'nav-links' + (isActive ? ' active' : '')}
               onClick={closeMobileMenu}
             >
               Contact
             </NavLink>
           </li>
-           {/* Search bar for mobile menu */}
+           
            <li className="nav-item nav-item-mobile-search">
             <form onSubmit={handleSearchSubmit} className="search-bar-mobile">
               <input
@@ -115,7 +114,7 @@ const Navbar = () => {
           </form>
 
           <Link
-            to="/profile" // You'll need to create this page/route
+            to="/profile" 
             className="nav-icon-link"
             aria-label="User Profile"
             onClick={closeMobileMenu}

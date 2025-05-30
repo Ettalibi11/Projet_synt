@@ -1,7 +1,7 @@
-      // src/components/HomePageSections/FaqsSection.jsx
+      
 import React, { useState } from 'react';
 
-// You can keep faqsData here or pass it as a prop if it might change or come from elsewhere
+
 const faqsData = [
   {
     id: 1,

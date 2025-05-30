@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: [], // Array to hold { product, quantity }
-  isCartOpen: false, // To control visibility of a cart sidebar/modal
+  items: [], 
+  isCartOpen: false, 
 };
 
 const cartSlice = createSlice({
@@ -10,33 +10,33 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      const newItem = action.payload; // Expecting the whole product object
+      const newItem = action.payload; 
       const existingItem = state.items.find(item => item.product.id === newItem.id);
       if (existingItem) {
         existingItem.quantity++;
       } else {
         state.items.push({ product: newItem, quantity: 1 });
       }
-      state.isCartOpen = true; // Optionally open cart when item is added
+      state.isCartOpen = true; 
     },
     removeItem: (state, action) => {
-      const itemIdToRemove = action.payload; // Expecting product id
+      const itemIdToRemove = action.payload; 
       state.items = state.items.filter(item => item.product.id !== itemIdToRemove);
     },
     incrementQuantity: (state, action) => {
-      const itemId = action.payload; // Expecting product id
+      const itemId = action.payload; 
       const item = state.items.find(item => item.product.id === itemId);
       if (item) {
         item.quantity++;
       }
     },
     decrementQuantity: (state, action) => {
-      const itemId = action.payload; // Expecting product id
+      const itemId = action.payload; 
       const item = state.items.find(item => item.product.id === itemId);
       if (item && item.quantity > 1) {
         item.quantity--;
       } else if (item && item.quantity === 1) {
-        // Optional: remove if quantity becomes 0, or handle in removeItem
+        
         state.items = state.items.filter(i => i.product.id !== itemId);
       }
     },
@@ -45,9 +45,9 @@ const cartSlice = createSlice({
     },
     clearCart: (state) => {
       state.items = [];
-      state.isCartOpen = false; // Optionally close cart when cleared
+      state.isCartOpen = false; 
     },
-    // You might add more like setCartOpen(state, action) { state.isCartOpen = action.payload }
+    
   },
 });
 

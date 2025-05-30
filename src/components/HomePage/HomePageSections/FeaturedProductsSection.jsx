@@ -1,4 +1,4 @@
-      // src/components/HomePageSections/FeaturedProductsSection.jsx
+      
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ function FeaturedProductsSection({ products, onAddToCart }) {
       <section className="featured-products-section">
         <div className="section-header">
           <h2 className="section-title">Our Popular Flowers</h2>
-          {/* Link to products page can still be here or moved to HomePage */}
+          
         </div>
         <p className="no-featured-products-message">
           Come back soon to see our featured collection!
